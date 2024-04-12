@@ -1,0 +1,54 @@
+#include <stdio.h>
+int add(int a,int b)
+{
+   return a+b;
+}
+int sub(int a,int b)
+{
+   return a-b;
+}
+int mul(int a,int b)
+{
+   return a*b;
+}
+int div(int a,int b)
+{
+   return a/b;
+}
+int clac(int (*pf1)(int ,int ))
+{
+	int x,y;
+	printf("请输入两个数");
+	scanf("%d%d",&x,&y);
+	  //pf1(x,y)； 
+	printf("%d\n",pf1(x,y));
+}
+int main()
+{
+	int x;
+	
+	do{ 
+	scanf("%d",&x);	
+	switch(x)
+	{	
+	    
+		case 1:
+			clac(add);
+			break;
+	    case 2:
+	    	clac(sub);
+	    	break;
+	    case 3:
+	    	clac(mul);
+	    	break;
+	    case 4:
+	    	clac(div);
+	    	break;
+	    case 0:
+	    	printf("退出");
+	   	defalut:
+	    	printf("重新输入");
+	}
+	}
+   while (x);
+}
